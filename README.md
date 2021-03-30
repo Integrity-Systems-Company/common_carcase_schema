@@ -6,5 +6,5 @@ These data feeds are delivered to MLA via multiple delivery mechanisms (CSV etc)
 
 The fragmented nature of the provision of feeds also increases the risk of defects and failure across systems and creates multiple security concerns and data management overheads. MLA is developing capability to support these kinds of scenarios, providing infrastructure to among other benefits, bring duplicative data sets together. Therefore, there is an opportunity to develop functionality to create a single feed channel for processor data within MLA programs accessible by all MLA systems and with development to broader industry stakeholders.
 
-## [Wiki](https://github.com/integritysystemscompany/carcase_data_standard/wiki)
+## [Wiki](https://github.com/Integrity-Systems-Company/common_carcase_schema/wiki)
 The Wiki is used for all our documentation related to the project.
