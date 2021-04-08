@@ -1,5 +1,5 @@
 { 
     "type": "string",
     "description": "Enumartion for a basic Yes or No",
-    "enum": ["Y","N"]
+    "enum": ["Y","N", null]
 }
