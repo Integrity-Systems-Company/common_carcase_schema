@@ -1,0 +1,5 @@
+{ 
+    "type": "string",
+    "description": "Indicates the side of the carcase - L = Left, R = Right, B = Both",
+    "enum": ["L", "R", "B"]
+}

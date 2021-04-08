@@ -1,0 +1,60 @@
+{ 
+    "description": "Extends the Industry Organisation object. Refer to the Industry Organisation object for all the attributes.",
+    "allOf":[
+        {
+            "$ref": "../resources/iscIndustryOrganisationResource.json"
+        },
+        {
+            "required": ["interests"],
+            "type": "object",
+            "description": "An Interested Party is a specific instance of an Industry Organisation.",
+            "properties": 
+            {
+                "interests": {
+                    "type": "array",
+                    "description": "Identifies the type of interest of the party",
+                    "items":
+                    {
+                        "type": "string"
+                    }
+                },
+                "pic": {
+                    "type": "string",
+                    "description": "PIC of the organisation. Property Identification Code"
+                },
+                "picStatus": {
+                    "type": "string",
+                    "description": "Status of the PIC"
+                },
+                "picType": {
+                    "type": "string",
+                    "description": "Type of the PIC"
+                },
+                "picSpecies": {
+                    "type": "array",
+                    "description": "Indicates the animal species that the property houses",
+                    "items":
+                    {
+                        "type":"string"
+                    }
+                },
+                "picLpa": {
+                    "type": "integer",
+                    "description": "Livestock Production Assurance number"
+                },
+                "brandCode": {
+                    "type": "string",
+                    "description": "Stock brand identifier. Used only in WA"
+                },
+                "registrations": {
+                    "type": "array",
+                    "description": "Scheme = e.g. ABN, AusMeat, MSA, NLIS, LPA.",
+                    "items":
+                    {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+{ 
+    "required": ["lot", "groupLotNumber", "lotCount", "specie"],
+    "type": "object",
+    "description": "A Processing Lot describes a group or batch of animals from a single Consignment that are processed together. A Lot is therefore linked to the National Vendor Declaration that accompanied the Consignment but may represent a subset of animals that are processed at a time to meet logistical requirements.",
+    "properties": 
+    {
+        "killDate": {
+            "type": "string",
+            "format": "date-Time",
+            "description": "Time and date the lot was killed. In some contexts may be the date the lot was started being killed (because the lot may be started before midnight but finished after midnight)."
+        },
+        "killLocation": {
+            "$ref": "../resources/iscSupplyChainLocationResource.json"
+        },
+        "lot": {
+            "type": "string",
+            "description": "Plant allocated slaughter Lot Number",
+            "minLength": 6,
+            "maxLength": 6
+        },
+        "startBodyNumber": {
+            "type": "integer",
+            "description": "Lot start body number (matching values across same establishment, kill date, and chain)"
+        },
+        "endBodyNumber": {
+            "type": "integer",
+            "description": "Lot end body number (matching values across same establishment, kill date, and chain)"
+        },
+        "lotConsignment": {
+            "$ref": "../resources/iscConsignmentResource.json"
+        },
+        "groupLotNumber": {
+            "type": "integer",
+            "description": "Group Number to segregate lots or other grouping"
+        },
+        "lotCount": {
+            "type": "integer",
+            "description": "Lot body count"
+        },
+        "targetMarket": {
+            "$ref": "../enums/iscTargetMarketType.json"
+        },
+        "interestedParties": {
+            "type": "array",
+            "description": "List of Interested Parties",
+            "items":
+            {
+                "$ref": "../resouces/iscInterestedPartyResource.json"
+            }
+        },
+        "killType": {
+            "type": "string",
+            "description": "Abattoir’s internal kill classification code"
+        },
+        "specie": {
+            "$ref": "../enums/iscSpecieType.json"
+        }
+    }
+}

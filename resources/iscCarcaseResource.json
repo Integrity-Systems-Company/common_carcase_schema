@@ -1,0 +1,45 @@
+{ 
+    "required": ["bodyNo", "animalIdentifier"],
+    "type": "object",
+    "description": "A carcase (also called carcass) identifies a single animal which is processed at a plant. A carcase has identifying information, attributes describing the animal, and then a number of observations.",
+    "properties": 
+    {
+        "killDate": {
+            "type": "string",
+            "format": "date-Time",
+            "description": "Time and date the lot was killed. In some contexts may be the date the lot was started being killed (because the lot may be started before midnight but finished after midnight)."
+        },
+        "lot": {
+            "$ref": "../resources/iscProcessingLotResource.json"
+        },
+        "bodyNo": {
+            "type": "integer",
+            "description": "Identifier assigned to carcase by processor.",
+            "exclusiveMaximum": 10000,
+            "minimum": 0
+        },
+        "animalIdentifier": {
+            "$ref": "../types/iscAnimalType.json"
+        },
+        "metadata": {
+            "type": "string",
+            "description": "Carcase metadata"
+        },
+        "eqsRef": {
+            "type": "integer",
+            "description": "EQS Ref - a barcode from DNA sample collected from carcase"
+        },
+        "plantBoningRun": {
+            "type": "integer",
+            "description": "Plant Boning Run"
+        },
+        "plantBoningRunTemp": {
+            "type": "string",
+            "description": "Plant Boning Run Template"
+        },
+        "destCode": {
+            "type": "string",
+            "description": "Destination codes are plant codes that are used for company requirements and to link MSA Plant Boning Run processing."
+        }
+    }
+}

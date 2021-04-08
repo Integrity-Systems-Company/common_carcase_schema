@@ -1,0 +1,43 @@
+{ 
+    "type": "object",
+    "description": "Details of device",
+    "properties": 
+    {
+        "model": {
+            "type": "string",
+            "description": "Model number of the device"
+        },
+        "description": {
+            "type": "string",
+            "description": "Description of the device"
+        },
+        "manufacturer": {
+            "type": "string",
+            "description": "Manufacturer of the device"
+        },
+        "serial": {
+            "type": "string",
+            "description": "Serial number of the device"
+        },
+        "uri": {
+            "@type": "xsd:url",
+            "type": "string",
+            "format": "uri",
+            "description": "Uri of the device"
+        },
+        "softwareVersion": {
+            "type": "string",
+            "description": "Version of the software"
+        },
+        "hardwareVersion": {
+            "type": "string",
+            "description": "Version of the hardware"
+        },
+        "techType": {
+            "$ref": "../enums/iscTechType.json"
+        },
+        "deliveryMechanism": {
+            "$ref":"../enums/iscDeliveryMechanismType.json"
+        }
+    }
+}

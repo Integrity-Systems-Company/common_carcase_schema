@@ -1,0 +1,5 @@
+{ 
+    "type": "string",
+    "description": "Enumartion for DataType: N= New, M=Modified, D=Deleted",
+    "enum": ["N","M", "D"]
+}

@@ -1,0 +1,6 @@
+{ 
+    "type": "string",
+    "description": "Location including implant area of the ID device",
+    "enum": ["LE", "RE", "LH", "RH", "NS", "CH", "RU", "U"]
+    
+}

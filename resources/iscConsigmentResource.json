@@ -1,0 +1,86 @@
+{ 
+    "required": ["dateShipped", "dateReceived", "quantityConsigned", "eNVDRef","arrivalTime"],
+    "type": "object",
+    "description": "A Consignment documents a specific set of animals delivered from a source property to a processing plant. In the Open Applications Group business language, a Consignment is represented by a “Shipment”. A consignment is expected to be accompanied by a National Vendor Declaration.",
+    "properties": 
+    {
+        "dateShipped": {
+            "type": "string",
+            "format": "date",
+            "description": "Date on which the consignment of animals was sent from the supply property"
+        },
+        "dateReceived": {
+            "type": "string",
+            "format": "date",
+            "description": "Date on which the consignment of animals was received at the processor"
+        },
+        "quantityConsigned": {
+            "type": "integer",
+            "description": "Number of animals in the consignment"
+        },
+        "quantityReceived": {
+            "type": "integer",
+            "description": "Number of animals received at the destination"
+        },
+        "eNVDRef": {
+            "type": "string",
+            "description": "Electronic National Vendor Declaration reference number. Refers to the Consignment with the reference number or Serial Number of the NVD Document or international equivalent in which animals were delivered to the processor"
+        },
+        "msaVendorDecSerial": {
+            "type": "integer",
+            "description": "MSA Vendor Declaration Serial Number"
+        },
+        "source": {
+            "$ref": "../resources/iscIndustryOrganisationResource.json",
+            "description": "Provides the property details of the source of the consignment. This acts as a location sub-object whose identifying information is an identifier such as a PIC of the source property."
+        },
+        "destination": {
+            "$ref": "../resources/iscIndustryOrganisationResource.json",
+            "description": "Provides the Plant details of the destination of the consignment. This acts as a location sub- object whose identifying information is an identifier such as a PIC of a plant"
+        },
+        "interestedParties": {
+            "type": "array",
+            "description": "Could include source, destination, operator, owner, saleyard",
+            "items":
+            {
+                "$ref": "../resources/iscInterestedPartyResource.json"
+            }
+        },
+        "saleyardSourced": {
+            "type": "boolean",
+            "description": "Indicates if livestock are saleyard sourced. Required when used for MSA App grading function. For MSA usage must have a single vendor for saleyard sourced."
+        },
+        "arrivalTime": {
+            "type": "string",
+            "format": "date-Time",
+            "description": "Livestock truck arrival/ unloading date and time at the plant lairage. Plant system generated data."
+        },
+        "hgpFree": {
+            "$ref": "../enums/iscBooleanType.json",
+            "description": "Indicates if HGP has been used on the animals (consignment or carcase)"
+        },
+        "residueFree": {
+            "$ref": "../enums/iscBooleanType.json",
+            "description": "Free of residues contamination (consignment or carcase)"
+        },
+        "feedType": {
+            "$ref": "../enums/iscFeedType.json"
+        },
+        "daysOnFeed": {
+            "type": "integer",
+            "description": "Number of days the animals were on feed"
+        },
+        "milkFedVealer": {
+            "type": "boolean",
+            "description": "Indicates whether the veal were fed or milk or not"
+        },
+        "hoursOffFeed": {
+            "type": "integer",
+            "description": "Number of hours since the animal last had access to feed."
+        },
+        "hoursOffWater": {
+            "type": "integer",
+            "description": "Number of hours since the animal last had access to water."
+        }                
+    }
+}

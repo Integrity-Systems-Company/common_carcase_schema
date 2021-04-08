@@ -1,0 +1,20 @@
+{ 
+    "required": ["chainNo"],
+    "type": "object",
+    "description": "A Supply Chain Location is an extension of the organisation class that identifies the chain in the plant, its type and specie.",
+    "properties": 
+    {
+        "plant": {
+            "$ref": "../resources/iscPlantResource.json"
+        },
+        "chainNo": {
+            "type": "string",
+            "description": "Chain number used for the carcase. Valid values are 1-9.",
+            "maxLength": 2,
+            "pattern": "[0-9]"
+        },
+        "chainProcess": {
+            "$ref": "../enum/iscChainProcessType.json"
+        }
+    }
+}

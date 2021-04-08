@@ -1,0 +1,5 @@
+{ 
+    "type": "string",
+    "description": "Process Used at this point the chain",
+    "enum": ["Ante Mortem", "Post Mortem"]
+}

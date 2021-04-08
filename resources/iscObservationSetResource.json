@@ -1,0 +1,45 @@
+{ 
+    "required": ["location", "carcase", "observations"],
+    "type": "object",
+    "description": "Set of observations on a carcase, side or primal recorded by an operator at a specified date-time.",
+    "properties": 
+    {
+       "dateTime": {
+           "type": "string",
+           "format": "date-Time",
+           "description": "Time and date of the observation"
+       },
+       "location": {
+           "$ref": "../resources/iscSupplyChainLocationResource.json"
+       },
+       "carcase": {
+           "$ref": "../resouces/iscCarcaseResource.json"
+       },
+       "dataState": {
+           "$ref": "../enums/iscDataStateType.json"
+       },
+       "observer": {
+           "$ref": "../resouces/iscObserverResource.json"
+       },
+       "sideId": {
+           "$ref":"../enums/iscCarcaseSideType.json"
+       },
+       "primalId": {
+        "$ref": "../enums/iscCarcasePrimalType.json"
+       },
+       "carcaseState": { 
+           "$ref": "../enums/iscCarcaseStateType.json"
+       },
+       "device": {
+           "$ref": "../resouces/iscDeviceResource.json"
+       },
+       "observations": {
+           "type": "array",
+           "description": "Array of observations for this carcase, side or primal",
+           "items":
+           {
+               "$ref": "../resouces/iscObservationResource.json"
+           }
+       }
+    }
+}
