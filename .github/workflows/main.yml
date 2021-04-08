@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Generate MD files Step
-        uses: Keenan-Tisch/common_carcase_schema@master
+        uses: Keenan-Tisch/common_carcase_schema@main
         id: generate_file
       # commits the updated MD files
       - name: Commit files
