@@ -1,0 +1,23 @@
+{ 
+    "required": ["name", "values", "metric"],
+    "type": "object",
+    "description": "Qualifier applied to further describe the metric",
+    "properties": 
+    {
+        "name": {
+            "type": "string",
+            "description": "Name of the qualifier"
+        },  
+        "values": {
+            "type": "array",
+            "description": "Values permitted for the qualifier",
+            "items":
+            {
+                "type": "string"
+            }
+        },        
+        "metric": {
+            "$ref": "../types/Metric.json"
+        }
+    }
+}

@@ -1,0 +1,5 @@
+{ 
+    "type": "string",
+    "description": "Delivery mechanism for the device (See: Code Set 243 - ID Delivery Mechanism)",
+    "enum": ["ANB", "ATT","ERT", "FIB", "FRB", "NST", "RUP", "RTT", "SBI", "TAT", "U"]
+}

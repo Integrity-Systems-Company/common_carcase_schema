@@ -1,0 +1,15 @@
+{ 
+    "required": ["plant", "id"],
+    "type": "object",
+    "description": "Details of the observer or operator",
+    "properties": 
+    {
+        "plant": {
+            "$ref": "../resources/iscPlantResource.json"
+        },
+        "id": {
+            "type": "string",
+            "description": "Internal identifier of person"
+        }     
+    }
+}

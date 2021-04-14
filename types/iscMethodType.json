@@ -1,0 +1,22 @@
+{ 
+    "required": ["name","standard", "metric"],
+    "type": "object",
+    "description": "The standard method used to determine the value of the metric",
+    "properties": 
+    {        
+        "name": {
+            "type": "string",
+            "description": "Method name"
+        },        
+        "description": {
+            "type": "string",
+            "description": "Description of the metric as measured by the method"
+        },
+        "standard": {
+            "$ref": "../types/Standard.json"
+        },
+        "metric": {
+            "$ref": "../types/Metric.json"
+        }
+    }
+}

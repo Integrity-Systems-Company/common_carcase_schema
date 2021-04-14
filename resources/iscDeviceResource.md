@@ -1,0 +1,20 @@
+ - <b id="#/properties/model">model</b>
+	 - **Type:** `string`
+ - <b id="#/properties/description">description</b>
+	 - **Type:** `string`
+ - <b id="#/properties/manufacturer">manufacturer</b>
+	 - **Type:** `string`
+ - <b id="#/properties/serial">serial</b>
+	 - **Type:** `string`
+ - <b id="#/properties/uri">uri</b>
+	 - **Type:** `string`
+ - <b id="#/properties/softwareVersion">softwareVersion</b>
+	 - **Type:** `string`
+ - <b id="#/properties/hardwareVersion">hardwareVersion</b>
+	 - **Type:** `string`
+ - <b id="#/properties/techType">techType</b>
+	 - &#36;ref: [../enums/iscTechType.json](#..enumsisctechtype.json)
+ - <b id="#/properties/deliveryMechanism">deliveryMechanism</b>
+	 - &#36;ref: [../enums/iscDeliveryMechanismType.json](#..enumsiscdeliverymechanismtype.json)
+
+_Generated with [json-schema-md-doc](https://brianwendt.github.io/json-schema-md-doc/)_

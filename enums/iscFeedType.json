@@ -1,0 +1,5 @@
+{ 
+    "type": "string",
+    "description": "Type of feed the animals were on",
+    "enum": ["Grass","Grain","Mixed"]
+}

@@ -1,0 +1,22 @@
+ - <b id="#/properties/killDate">killDate</b>
+	 - **Type:** `string`
+ - <b id="#/properties/lot">lot</b>
+	 - &#36;ref: [../resources/iscProcessingLotResource.json](#..resourcesiscprocessinglotresource.json)
+ - <b id="#/properties/bodyNo">bodyNo</b> `required`
+	 - **Type:** `integer`
+	 - Range:  &ge; 0
+	 - Exlusive Range:  < 10000
+ - <b id="#/properties/animalIdentifier">animalIdentifier</b> `required`
+	 - &#36;ref: [../types/iscAnimalType.json](#..typesiscanimaltype.json)
+ - <b id="#/properties/metadata">metadata</b>
+	 - **Type:** `string`
+ - <b id="#/properties/eqsRef">eqsRef</b>
+	 - **Type:** `integer`
+ - <b id="#/properties/plantBoningRun">plantBoningRun</b>
+	 - **Type:** `integer`
+ - <b id="#/properties/plantBoningRunTemp">plantBoningRunTemp</b>
+	 - **Type:** `string`
+ - <b id="#/properties/destCode">destCode</b>
+	 - **Type:** `string`
+
+_Generated with [json-schema-md-doc](https://brianwendt.github.io/json-schema-md-doc/)_

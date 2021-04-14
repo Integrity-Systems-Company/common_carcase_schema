@@ -1,0 +1,16 @@
+{ 
+    "description": "Extends the Industry Organisation object. Refer to the Industry Organisation object for all the attributes.",
+    "allOf":[
+        {
+            "$ref": "../resources/iscIndustryOrganisationResource.json"
+        },    
+        {
+            "type": "object",
+            "description": "The Plant is a specific instance of an Industry Organisation.",
+            "properties": 
+            {
+                
+            }
+        }
+    ]
+}

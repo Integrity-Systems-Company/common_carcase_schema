@@ -1,0 +1,27 @@
+ - <b id="#/properties/killDate">killDate</b>
+	 - **Type:** `string`
+ - <b id="#/properties/killLocation">killLocation</b>
+	 - &#36;ref: [../resources/iscSupplyChainLocationResource.json](#..resourcesiscsupplychainlocationresource.json)
+ - <b id="#/properties/lot">lot</b> `required`
+	 - **Type:** `string`
+	 - Length: between 6 and 6
+ - <b id="#/properties/startBodyNumber">startBodyNumber</b>
+	 - **Type:** `integer`
+ - <b id="#/properties/endBodyNumber">endBodyNumber</b>
+	 - **Type:** `integer`
+ - <b id="#/properties/lotConsignment">lotConsignment</b>
+	 - &#36;ref: [../resources/iscConsignmentResource.json](#..resourcesiscconsignmentresource.json)
+ - <b id="#/properties/groupLotNumber">groupLotNumber</b> `required`
+	 - **Type:** `integer`
+ - <b id="#/properties/lotCount">lotCount</b> `required`
+	 - **Type:** `integer`
+ - <b id="#/properties/targetMarket">targetMarket</b>
+	 - &#36;ref: [../enums/iscTargetMarketType.json](#..enumsisctargetmarkettype.json)
+ - <b id="#/properties/interestedParties">interestedParties</b>
+	 - **Type:** `array`
+ - <b id="#/properties/killType">killType</b>
+	 - **Type:** `string`
+ - <b id="#/properties/specie">specie</b> `required`
+	 - &#36;ref: [../enums/iscSpecieType.json](#..enumsiscspecietype.json)
+
+_Generated with [json-schema-md-doc](https://brianwendt.github.io/json-schema-md-doc/)_

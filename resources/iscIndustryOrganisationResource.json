@@ -1,0 +1,24 @@
+{
+    "description": "Extends the Organization object. Refer to the Organization object for all the attributes.",
+    "allOf":[
+        {
+            "$ref": "../schema-org/Organization.schema.json"
+        },    
+        { 
+            "required": [],
+            "type": "object",
+            "description": "For any additional organisation fields that are not provided in Organization.",
+            "properties": 
+            {          
+                "registeredIdentifiers": {
+                    "type": "array",
+                    "description": "Identifiers the organisation",
+                    "items":
+                    {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    ]
+}

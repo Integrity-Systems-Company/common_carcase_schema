@@ -1,0 +1,32 @@
+{ 
+    "required": ["standard", "metric", "method"],
+    "type": "object",
+    "description": "An observation within an observation set of a metric using a specified method on a carcase, side or primal",
+    "properties": 
+    {           
+        "value": {
+            "type": "string",
+            "description": "Value of the observed metric"
+        },     
+        "units": {
+            "$ref" : "../enums/iscMeasurementUnitType.json"
+        },
+        "resolution": {
+            "type": "number",
+            "format": "float",
+            "description": "Resolution of numeric metrics"
+        },
+        "standard": {
+            "$ref": "../types/iscStandardType.json"
+        },
+        "metric": {
+            "$ref": "../types/iscMetricType.json"
+        },  
+        "method": {
+            "$ref": "../types/iscMethodType.json"
+        },
+        "qualifier": {
+            "$ref": "../types/iscQualifierType.json"
+        }
+    }
+}

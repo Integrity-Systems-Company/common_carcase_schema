@@ -1,0 +1,47 @@
+{
+    "required": ["animalIdentifiers"],
+    "type": "object",
+    "description": "The life and identification data of the animal and fields that pertained to the live animal",
+    "properties": 
+    {
+        "animalIdentifiers": {
+            "type": "array",
+            "description": "URN identifier of an externally meaningful ID such as EID, birthTag, currentTag, birthHerdCode etc",
+            "items":
+            {
+                "type": "string"
+            }
+        },
+        "idTechType": {
+            "$ref": "../enums/iscTechType.json",
+            "description": "The technology used for the ID"
+        },
+        "gender": {
+            "$ref": "../enums/iscGenderType.json",
+            "description": "Enumeration for sex of animal using species-independent English names. Includes neuter/cryptorchid variations. Refer iscAnimalGenderType."
+        },
+        "metadata": {
+            "type": "string",
+            "description": "Animal metadata"
+        },
+        "idLocation": {
+            "$ref": "../enums/iscImplantLocationType.json"
+        },
+        "breedMix": {
+            "type": "integer",
+            "description": "Breed mix (parentage) of the animal"
+        },
+        "breedLevel": {
+            "type": "integer",
+            "description": "Level the breed is being described"
+        },
+        "hgpFree": {
+            "$ref": "../enums/iscBooleanType.json",
+            "description": "Hormone Growth Promotant free"
+        },
+        "residueFree": {
+            "$ref": "../enums/iscBooleanType.json",
+            "description": "Free of residues contamination"
+        }
+    }
+}

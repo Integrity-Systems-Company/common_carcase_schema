@@ -1,0 +1,5 @@
+{ 
+    "type": "string",
+    "description": "The Target Market",
+    "enum": ["LYL", "MYL", "HYL", "JOX ", "LGF" ,"HGF", "1GF", "EUM", "LCW", "HCW", "LYM", "MYM ", "HYM", "LGM", "HGM", "1GM", "V", "VYL", "BUL", "EXL", "DRT", "MLW "]
+}

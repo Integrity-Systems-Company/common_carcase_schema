@@ -1,0 +1,5 @@
+{ 
+    "type": "string",
+    "description": "Species processed by the chain ",
+    "enum": ["Cattle", "Sheep", "Goat", "Pigs", "Buffalo"]
+}

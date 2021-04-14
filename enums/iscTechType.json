@@ -1,0 +1,5 @@
+{ 
+    "type": "string",
+    "description": "Technology used for the device (See Code Set 245 - ID Technology Type)",
+    "enum": ["AAS", "AVI", "BCD", "DES", "DNA", "DTB", "IRS", "HGH", "INT", "JED", "MGT", "MTB", "NED", "NPR", "PIC", "NLD", "OZT", "U", "RFD", "TIR", "TRO", "VIS", "NVD", "WBL"]
+}

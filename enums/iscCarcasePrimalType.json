@@ -1,0 +1,5 @@
+{ 
+    "type": "string",
+    "description": "Identifies the primal being observed",
+    "enum": ["Total", "Forequarter", "Middle", "Hindquarter"]
+}
