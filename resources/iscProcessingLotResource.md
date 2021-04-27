@@ -21,7 +21,7 @@
 	 - **Type:** `array`
  - <b id="#/properties/killType">killType</b>
 	 - **Type:** `string`
- - <b id="#/properties/specie">specie</b> `required`
-	 - &#36;ref: [../enums/iscSpecieType.json](#..enumsiscspecietype.json)
+ - <b id="#/properties/species">species</b>
+	 - &#36;ref: [../enums/iscSpeciesType.json](#..enumsiscspeciestype.json)
 
 _Generated with [json-schema-md-doc](https://brianwendt.github.io/json-schema-md-doc/)_
