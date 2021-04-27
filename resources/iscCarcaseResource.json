@@ -21,10 +21,6 @@
         "animalIdentifier": {
             "$ref": "../types/iscAnimalType.json"
         },
-        "metadata": {
-            "type": "string",
-            "description": "Carcase metadata"
-        },
         "eqsRef": {
             "type": "integer",
             "description": "EQS Ref - a barcode from DNA sample collected from carcase"
