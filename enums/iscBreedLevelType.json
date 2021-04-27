@@ -1,0 +1,5 @@
+{ 
+    "type": "string",
+    "description": "Enumeration for breedLevelQualifier.  Refer iscBreedLevelType.",
+    "enum": ["A0", "D1", "S1", "D2", "S2"]
+}
