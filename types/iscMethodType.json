@@ -13,10 +13,13 @@
             "description": "Description of the metric as measured by the method"
         },
         "standard": {
-            "$ref": "../types/Standard.json"
+            "$ref": "../types/iscStandardType.json"
         },
         "metric": {
-            "$ref": "../types/Metric.json"
+            "$ref": "../types/iscMetricType.json"
+        },
+        "status": {
+            "$ref": "../enum/iscBooleanType.json"
         }
     }
 }
