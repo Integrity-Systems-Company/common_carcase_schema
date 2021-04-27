@@ -17,7 +17,7 @@
             }
         },        
         "metric": {
-            "$ref": "../types/Metric.json"
+            "$ref": "../types/iscMetricType.json"
         }
     }
 }
