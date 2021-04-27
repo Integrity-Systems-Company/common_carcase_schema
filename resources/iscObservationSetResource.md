@@ -3,11 +3,11 @@
  - <b id="#/properties/location">location</b> `required`
 	 - &#36;ref: [../resources/iscSupplyChainLocationResource.json](#..resourcesiscsupplychainlocationresource.json)
  - <b id="#/properties/carcase">carcase</b> `required`
-	 - &#36;ref: [../resouces/iscCarcaseResource.json](#..resoucesisccarcaseresource.json)
+	 - &#36;ref: [../resources/iscCarcaseResource.json](#..resourcesisccarcaseresource.json)
  - <b id="#/properties/dataState">dataState</b>
 	 - &#36;ref: [../enums/iscDataStateType.json](#..enumsiscdatastatetype.json)
  - <b id="#/properties/observer">observer</b>
-	 - &#36;ref: [../resouces/iscObserverResource.json](#..resoucesiscobserverresource.json)
+	 - &#36;ref: [../resources/iscObserverResource.json](#..resourcesiscobserverresource.json)
  - <b id="#/properties/sideId">sideId</b>
 	 - &#36;ref: [../enums/iscCarcaseSideType.json](#..enumsisccarcasesidetype.json)
  - <b id="#/properties/primalId">primalId</b>
@@ -15,7 +15,7 @@
  - <b id="#/properties/carcaseState">carcaseState</b>
 	 - &#36;ref: [../enums/iscCarcaseStateType.json](#..enumsisccarcasestatetype.json)
  - <b id="#/properties/device">device</b>
-	 - &#36;ref: [../resouces/iscDeviceResource.json](#..resoucesiscdeviceresource.json)
+	 - &#36;ref: [../resources/iscDeviceResource.json](#..resourcesiscdeviceresource.json)
  - <b id="#/properties/observations">observations</b> `required`
 	 - **Type:** `array`
 
