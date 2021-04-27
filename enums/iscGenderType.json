@@ -1,5 +1,5 @@
 { 
     "type": "string",
-    "description": "Enumeration for sex of animal using species-independent English names. Includes neuter/cryptorchid variations. Refer iscAnimalGenderType.",
-    "enum": ["Female", "Female.Neuter", "Male", "Male.Cryptorchid", "Male.Neuter"]
+    "description": "Enumeration for sex of animal.  Refer iscAnimalGenderType.",
+    "enum": ["Male", "Female", "Bull"]
 }
