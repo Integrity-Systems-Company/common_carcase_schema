@@ -45,7 +45,7 @@
             "description": "List of Interested Parties",
             "items":
             {
-                "$ref": "../resouces/iscInterestedPartyResource.json"
+                "$ref": "../resources/iscInterestedPartyResource.json"
             }
         },
         "killType": {
