@@ -13,13 +13,13 @@
            "$ref": "../resources/iscSupplyChainLocationResource.json"
        },
        "carcase": {
-           "$ref": "../resouces/iscCarcaseResource.json"
+           "$ref": "../resources/iscCarcaseResource.json"
        },
        "dataState": {
            "$ref": "../enums/iscDataStateType.json"
        },
        "observer": {
-           "$ref": "../resouces/iscObserverResource.json"
+           "$ref": "../resources/iscObserverResource.json"
        },
        "sideId": {
            "$ref":"../enums/iscCarcaseSideType.json"
@@ -31,14 +31,14 @@
            "$ref": "../enums/iscCarcaseStateType.json"
        },
        "device": {
-           "$ref": "../resouces/iscDeviceResource.json"
+           "$ref": "../resources/iscDeviceResource.json"
        },
        "observations": {
            "type": "array",
            "description": "Array of observations for this carcase, side or primal",
            "items":
            {
-               "$ref": "../resouces/iscObservationResource.json"
+               "$ref": "../resources/iscObservationResource.json"
            }
        }
     }
