@@ -8,8 +8,6 @@
 	 - Exlusive Range:  < 10000
  - <b id="#/properties/animalIdentifier">animalIdentifier</b> `required`
 	 - &#36;ref: [../types/iscAnimalType.json](#..typesiscanimaltype.json)
- - <b id="#/properties/metadata">metadata</b>
-	 - **Type:** `string`
  - <b id="#/properties/eqsRef">eqsRef</b>
 	 - **Type:** `integer`
  - <b id="#/properties/plantBoningRun">plantBoningRun</b>
