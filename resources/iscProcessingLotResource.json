@@ -52,8 +52,8 @@
             "type": "string",
             "description": "Abattoir’s internal kill classification code"
         },
-        "specie": {
-            "$ref": "../enums/iscSpecieType.json"
+        "species": {
+            "$ref": "../enums/iscSpeciesType.json"
         }
     }
 }
