@@ -1,3 +1,19 @@
 { 
-    "type": "string"
+    "required": ["name","standard"],
+    "type": "object",
+    "description": "The metric being used",
+    "properties": 
+    {        
+        "name": {
+            "type": "string",
+            "description": "Metric name"
+        },        
+        "description": {
+            "type": "string",
+            "description": "Description of the metric being used"
+        },
+        "standard": {
+            "$ref": "../types/iscStandardType.json"
+        }
+    }
 }
