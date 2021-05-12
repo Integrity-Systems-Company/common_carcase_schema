@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Generate MD files Step
-        uses: Keenan-Tisch/json-schema-md-doc@master
+        uses: Datalinker-Org/json-schema-md-doc@merge_attempt
         id: generate_file
       # commits the updated MD files
       - name: Commit files
