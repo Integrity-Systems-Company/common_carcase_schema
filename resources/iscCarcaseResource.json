@@ -15,7 +15,7 @@
         "bodyNo": {
             "type": "integer",
             "description": "Identifier assigned to carcase by processor.",
-            "exclusiveMaximum": 10000,
+            "exclusiveMaximum": 100000,
             "minimum": 0
         },
         "animalIdentifier": {
