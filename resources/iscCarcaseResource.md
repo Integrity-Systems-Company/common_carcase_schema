@@ -5,7 +5,7 @@
  - <b id="#/properties/bodyNo">bodyNo</b> `required`
 	 - **Type:** `integer`
 	 - Range:  &ge; 0
-	 - Exlusive Range:  < 10000
+	 - Exlusive Range:  < 100000
  - <b id="#/properties/animalIdentifier">animalIdentifier</b> `required`
 	 - &#36;ref: [../types/iscAnimalType.json](#..typesiscanimaltype.json)
  - <b id="#/properties/eqsRef">eqsRef</b>
