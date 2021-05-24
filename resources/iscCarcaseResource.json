@@ -36,6 +36,10 @@
         "destCode": {
             "type": "string",
             "description": "Destination codes are plant codes that are used for company requirements and to link MSA Plant Boning Run processing."
+        },
+        "refProcessorGrid": {
+            "type": "string",
+            "description": "Reference to processor grid used to calculate the price paid to producer"
         }
     }
 }
