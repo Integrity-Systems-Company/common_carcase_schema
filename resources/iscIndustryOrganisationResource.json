@@ -12,7 +12,7 @@
             {          
                 "registeredIdentifiers": {
                     "type": "array",
-                    "description": "Identifiers the organisation",
+                    "description": "Identifies the organisation",
                     "items":
                     {
                         "type": "string"
