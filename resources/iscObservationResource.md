@@ -12,5 +12,9 @@
 	 - &#36;ref: [../types/iscMethodType.json](#..typesiscmethodtype.json)
  - <b id="#/properties/qualifier">qualifier</b>
 	 - &#36;ref: [../types/iscQualifierType.json](#..typesiscqualifiertype.json)
+ - <b id="#/properties/observationStatus">observationStatus</b>
+	 - **Type:** `string`
+ - <b id="#/properties/problemDetail">problemDetail</b>
+	 - **Type:** `string`
 
 _Generated with [json-schema-md-doc](https://brianwendt.github.io/json-schema-md-doc/)_

@@ -7,7 +7,7 @@
 	 - Range:  &ge; 0
 	 - Exlusive Range:  < 100000
  - <b id="#/properties/animalIdentifier">animalIdentifier</b> `required`
-	 - &#36;ref: [../types/iscAnimalType.json](#..typesiscanimaltype.json)
+	 - &#36;ref: [../resources/iscAnimalResource.json](#..resourcesiscanimalresource.json)
  - <b id="#/properties/eqsRef">eqsRef</b>
 	 - **Type:** `integer`
  - <b id="#/properties/plantBoningRun">plantBoningRun</b>
