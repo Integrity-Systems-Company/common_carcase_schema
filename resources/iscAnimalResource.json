@@ -38,6 +38,10 @@
         "residueFree": {
             "$ref": "../enums/iscBooleanType.json",
             "description": "Free of residues contamination"
+        },
+        "deviceStatus": {
+            "type": "string",
+            "description": "Device extended status code"
         }
     }
 }

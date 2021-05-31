@@ -22,9 +22,13 @@
                     "type": "string",
                     "description": "PIC of the organisation. Property Identification Code"
                 },
-                "picStatus": {
-                    "type": "string",
-                    "description": "Status of the PIC"
+                "picExtendedResidueStatus": {
+                    "type": "array",
+                    "description": "Program and Status Code",
+                    "items":
+                    {
+                        "$ref": "../types/iscExtendedResidueStatusType.json"
+                    }
                 },
                 "picType": {
                     "type": "string",

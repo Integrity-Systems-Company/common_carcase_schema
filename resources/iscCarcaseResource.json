@@ -19,7 +19,7 @@
             "minimum": 0
         },
         "animalIdentifier": {
-            "$ref": "../types/iscAnimalType.json"
+            "$ref": "../resources/iscAnimalResource.json"
         },
         "eqsRef": {
             "type": "integer",

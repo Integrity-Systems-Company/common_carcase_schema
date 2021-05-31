@@ -27,6 +27,14 @@
         },
         "qualifier": {
             "$ref": "../types/iscQualifierType.json"
+        },
+        "observationStatus": {
+            "type": "string",
+            "description": "Status of the observation"
+        },
+        "problemDetail": {
+            "type": "string",
+            "description": "Reason for issue with observation"
         }
     }
 }

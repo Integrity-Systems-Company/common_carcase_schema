@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "description": "An extended residue status code and recorded date",
+    "properties": 
+    {
+        "code": {
+            "type": "string",
+            "description": "The code of the status"
+        },
+        "date":{
+        
+            "type": "string",
+            "format": "date-Time",
+            "description": "The recorded date of the status"
+        }  
+    }
+}
