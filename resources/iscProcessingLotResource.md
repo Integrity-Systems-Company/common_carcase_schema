@@ -1,3 +1,5 @@
+ - <b id="#/properties/id">id</b>
+	 - **Type:** `string`
  - <b id="#/properties/killDate">killDate</b>
 	 - **Type:** `string`
  - <b id="#/properties/killLocation">killLocation</b>
@@ -10,15 +12,13 @@
  - <b id="#/properties/endBodyNumber">endBodyNumber</b>
 	 - **Type:** `integer`
  - <b id="#/properties/lotConsignment">lotConsignment</b>
-	 - &#36;ref: [../resources/iscConsignmentResource.json](#..resourcesiscconsignmentresource.json)
+	 - &#36;ref: [../types/iscConsignmentReferenceType.json](#..typesiscconsignmentreferencetype.json)
  - <b id="#/properties/groupLotNumber">groupLotNumber</b> `required`
 	 - **Type:** `integer`
  - <b id="#/properties/lotCount">lotCount</b> `required`
 	 - **Type:** `integer`
  - <b id="#/properties/targetMarket">targetMarket</b>
 	 - &#36;ref: [../enums/iscTargetMarketType.json](#..enumsisctargetmarkettype.json)
- - <b id="#/properties/interestedParties">interestedParties</b>
-	 - **Type:** `array`
  - <b id="#/properties/killType">killType</b>
 	 - **Type:** `string`
  - <b id="#/properties/species">species</b>

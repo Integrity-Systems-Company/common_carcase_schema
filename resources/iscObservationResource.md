@@ -13,7 +13,7 @@
  - <b id="#/properties/qualifier">qualifier</b>
 	 - &#36;ref: [../types/iscQualifierType.json](#..typesiscqualifiertype.json)
  - <b id="#/properties/observationStatus">observationStatus</b>
-	 - **Type:** `string`
+	 - &#36;ref: [../enums/iscObservationStatusType.json](#..enumsiscobservationstatustype.json)
  - <b id="#/properties/problemDetail">problemDetail</b>
 	 - **Type:** `string`
 

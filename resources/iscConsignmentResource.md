@@ -1,3 +1,5 @@
+ - <b id="#/properties/id">id</b>
+	 - **Type:** `string`
  - <b id="#/properties/dateShipped">dateShipped</b> `required`
 	 - **Type:** `string`
  - <b id="#/properties/dateReceived">dateReceived</b> `required`
