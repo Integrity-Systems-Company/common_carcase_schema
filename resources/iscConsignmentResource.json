@@ -4,6 +4,11 @@
     "description": "A Consignment documents a specific set of animals delivered from a source property to a processing plant. In the Open Applications Group business language, a Consignment is represented by a “Shipment”. A consignment is expected to be accompanied by a National Vendor Declaration.",
     "properties": 
     {
+        "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Internal id issued to uniquely identify the consignment"
+        },
         "dateShipped": {
             "type": "string",
             "format": "date",

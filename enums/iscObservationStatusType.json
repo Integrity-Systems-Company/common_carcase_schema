@@ -1,0 +1,5 @@
+{ 
+    "type": "string",
+    "description": "Units that measure the observation",
+    "enum": ["Measured", "Not Measured", "Calculated", "Not Calculated"]
+}

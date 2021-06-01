@@ -4,6 +4,12 @@
     "description": "A Processing Lot describes a group or batch of animals from a single Consignment that are processed together. A Lot is therefore linked to the National Vendor Declaration that accompanied the Consignment but may represent a subset of animals that are processed at a time to meet logistical requirements.",
     "properties": 
     {
+        "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Internal id to uniquely identify the processing lot"
+        },
+        
         "killDate": {
             "type": "string",
             "format": "date-Time",
@@ -27,7 +33,7 @@
             "description": "Lot end body number (matching values across same establishment, kill date, and chain)"
         },
         "lotConsignment": {
-            "$ref": "../resources/iscConsignmentResource.json"
+            "$ref": "../types/iscConsignmentReferenceType.json"
         },
         "groupLotNumber": {
             "type": "integer",
@@ -39,14 +45,6 @@
         },
         "targetMarket": {
             "$ref": "../enums/iscTargetMarketType.json"
-        },
-        "interestedParties": {
-            "type": "array",
-            "description": "List of Interested Parties",
-            "items":
-            {
-                "$ref": "../resources/iscInterestedPartyResource.json"
-            }
         },
         "killType": {
             "type": "string",

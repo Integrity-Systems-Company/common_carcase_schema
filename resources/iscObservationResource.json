@@ -29,8 +29,7 @@
             "$ref": "../types/iscQualifierType.json"
         },
         "observationStatus": {
-            "type": "string",
-            "description": "Status of the observation"
+            "$ref": "../enums/iscObservationStatusType.json"
         },
         "problemDetail": {
             "type": "string",
