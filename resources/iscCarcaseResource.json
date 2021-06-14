@@ -29,7 +29,7 @@
             "type": "integer",
             "description": "Plant Boning Run"
         },
-        "plantBoningRunTemp": {
+        "plantBoningRunTemplate": {
             "type": "string",
             "description": "Plant Boning Run Template"
         },
