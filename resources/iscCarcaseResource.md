@@ -12,7 +12,7 @@
 	 - **Type:** `integer`
  - <b id="#/properties/plantBoningRun">plantBoningRun</b>
 	 - **Type:** `integer`
- - <b id="#/properties/plantBoningRunTemp">plantBoningRunTemp</b>
+ - <b id="#/properties/plantBoningRunTemplate">plantBoningRunTemplate</b>
 	 - **Type:** `string`
  - <b id="#/properties/destCode">destCode</b>
 	 - **Type:** `string`
