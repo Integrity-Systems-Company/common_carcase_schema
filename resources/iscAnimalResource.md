@@ -15,6 +15,8 @@
  - <b id="#/properties/residueFree">residueFree</b>
 	 - &#36;ref: [../enums/iscBooleanType.json](#..enumsiscbooleantype.json)
  - <b id="#/properties/deviceStatus">deviceStatus</b>
-	 - **Type:** `string`
+	 - &#36;ref: [../enums/iscDeviceStatusType.json](#..enumsiscdevicestatustype.json)
+ - <b id="#/properties/status">status</b>
+	 - &#36;ref: [../enums/iscAnimalStatusType.json](#..enumsiscanimalstatustype.json)
 
 _Generated with [json-schema-md-doc](https://brianwendt.github.io/json-schema-md-doc/)_
