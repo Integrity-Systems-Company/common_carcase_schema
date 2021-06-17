@@ -40,8 +40,12 @@
             "description": "Free of residues contamination"
         },
         "deviceStatus": {
-            "type": "string",
-            "description": "Device extended status code"
+            "$ref": "../enums/iscDeviceStatusType.json",
+            "description": "Device extended status code for residue testing and food safety purposes"
+        },
+        "status":{
+            "$ref": "../enums/iscAnimalStatusType.json",
+            "description": "Status of the animal for recording deaths"
         }
     }
 }

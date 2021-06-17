@@ -1,0 +1,5 @@
+{ 
+    "type": "string",
+    "description": "Status of the animal for recording deaths",
+    "enum": ["Alive", "Dead on Arrival", "Dead at Lairage"]
+}

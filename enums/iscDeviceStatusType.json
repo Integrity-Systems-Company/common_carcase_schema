@@ -1,0 +1,5 @@
+{ 
+    "type": "string",
+    "description": "Device extended status code for residue testing and food safety purposes",
+    "enum": ["AV1","AV2","DN1","DN2","IM1","IM2","JD1","JD2","JDV","PB1","PB2","NL1","NL2","K1F","K1V","K3","B","D1","Y","N","IA","L1","L2","LT Y","LT N","R1","RC1","RC2","S","S1","N1F","N1V","N2F","N2V","F1","F2","F3","TB1","CB"]
+}
