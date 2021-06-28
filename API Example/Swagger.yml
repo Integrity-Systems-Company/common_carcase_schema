@@ -1,0 +1,1042 @@
+openapi: '3.0.0'
+info:
+  title: "MLA Carcase API"
+  description: "Tracking and Registration API for animal carcases with in the supply chain"
+  version: '0.0.1'
+paths:
+  /host/consignment:
+    put:
+      description: "Creates or updates the consignment including identifying the interested parties. 
+      The response returns a unique MLA id for the consignment."
+      operationId: putConsignment
+      tags: ["Consignment"]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: "The Consignment to be added or updated"
+              $ref: "https://github.com/Integrity-Systems-Company/common_carcase_schema/blob/main/resources/iscConsignmentResource.json"
+            examples:
+              Consigment Post Example:
+                description: "A Consignment object"
+                $ref: '#/components/examples/Consigment Post Example'
+      responses:
+        '200':
+          description: "The updated Consignment with the Id filled in"
+          content:
+            application/json:
+              schema:
+                $ref: "https://github.com/Integrity-Systems-Company/common_carcase_schema/blob/main/resources/iscConsignmentResource.json"
+              examples:
+                Consigment Response Example:
+                  description: "A Consignment object"
+                  $ref: '#/components/examples/Consigment Response Example'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem Details'
+              examples:
+                Problem Details Fail Example:
+                  description: "A Problem Details object with the error code and message"
+                  $ref: "#/components/examples/Problem Details Fail Example" 
+
+  /host/consignment/{id}:
+    get:
+      description: "Gets the Consignment based on the requested Id. Checks on the consignment 
+      are returned."
+      operationId: getConsignment
+      tags: ["Consignment"]
+      parameters:
+        - name: id
+          in: path
+          description: "Primary identifier for the requested Consignment"
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: "The requested Consignment"
+          content:
+            application/json:
+              schema:
+                $ref: "https://github.com/Integrity-Systems-Company/common_carcase_schema/blob/main/resources/iscConsignmentResource.json"
+              examples:
+                Consigment Response Example:
+                  description: "A Consignment object"
+                  $ref: '#/components/examples/Consigment Response Example'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem Details'
+              examples:
+                Problem Details Fail Example:
+                  description: "A Problem Details object with the error code and message"
+                  $ref: "#/components/examples/Problem Details Fail Example" 
+
+  /host/consignment-animals/{id}:
+    put:
+      description: "Animal data for Animals in the Consignment are added or updated."
+      operationId: putConsignmentAnimals
+      tags: ["Consignment - Animals"]
+      parameters:
+        - name: id
+          in: path
+          description: Primary identifier for the requested Consignment
+          required: true
+          schema:
+            type: integer
+            format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: "An array of Animals that is being added or updated against the Consignment"
+              type: array
+              items:
+                $ref: "https://github.com/Integrity-Systems-Company/common_carcase_schema/blob/main/resources/iscAnimalResource.json"
+            examples:
+              Animal Post Example:
+                  description: "An array of Animal objects"
+                  $ref: '#/components/examples/Animal Post Example'
+      responses:
+        '200':
+          description: "An object that shows if any problems occurred adding or updating the Animals for the Consignment"
+          content:
+            application/json:
+              schema:
+                description: "A Problem Details object"
+                $ref: "#/components/schemas/Problem Details"
+              examples:
+                Problem Details Pass Animal Example:
+                  description: "A Problem Details object with no errors and an array of Animals"
+                  $ref: "#/components/examples/Problem Details Pass Animal Example"
+                Problem Details Fail Example:
+                  description: "A Problem Details object with the error code and message"
+                  $ref: "#/components/examples/Problem Details Fail Example"                  
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem Details'
+              examples:
+                Problem Details Fail Example:
+                  description: "A Problem Details object with the error code and message"
+                  $ref: "#/components/examples/Problem Details Fail Example" 
+
+    get:
+      description: "Returns data for the Animals that are in the requested Consignment."
+      operationId: getConsignmentAnimals
+      tags: ["Consignment - Animals"]
+      parameters:
+        - name: id
+          in: path
+          description: Primary identifier for the requested Consignment
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: "The array of Animals that belong to the requested Consignment"
+          content:
+            application/json:
+              schema:
+                $ref: "https://github.com/Integrity-Systems-Company/common_carcase_schema/blob/main/resources/iscAnimalResource.json"
+              examples:
+                Animal Response Example:
+                  description: "An array of Animal objects"
+                  $ref: '#/components/examples/Animal Response Example'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem Details'
+              examples:
+                Problem Details Fail Example:
+                  description: "A Problem Details object with the error code and message"
+                  $ref: "#/components/examples/Problem Details Fail Example" 
+
+  /host/processinglot:
+    put:
+      description: "Creates or updates the Processing Lot"
+      operationId: putProcessingLot
+      tags: ["Processing Lot"]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              name: "Processing Lot"
+              description: "The Processing Lot object to be added or updated"
+              $ref: "https://github.com/Integrity-Systems-Company/common_carcase_schema/blob/main/resources/iscProcessingLotResource.json"
+            examples:
+              Processing Lot Post Example:
+                  description: "A Processing Lot object"
+                  $ref: '#/components/examples/Processing Lot Post Example'
+      responses:
+        '200':
+          description: "The updated Processing Lot with the id filled in"
+          content:
+            application/json:
+              schema:
+                $ref: "https://github.com/Integrity-Systems-Company/common_carcase_schema/blob/main/resources/iscProcessingLotResource.json"
+              examples:
+                Processing Lot Response Example:
+                  description: "A Processing Lot object"
+                  $ref: '#/components/examples/Processing Lot Response Example'              
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem Details'
+              examples:
+                Problem Details Fail Example:
+                  description: "A Problem Details object with the error code and message"
+                  $ref: "#/components/examples/Problem Details Fail Example" 
+
+  /host/processinglot/{lotId}:
+    get:
+      description: "Returns a Processing Lot for the requested lotId"
+      operationId: getProcessingLot
+      tags: ["Processing Lot"]
+      parameters:
+        - name: lotId
+          in: path
+          description: "Primary identifier for the requested Processing Lot"
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: "The requested Processing Lot"
+          content:
+            application/json:
+              schema:
+                $ref: "https://github.com/Integrity-Systems-Company/common_carcase_schema/blob/main/resources/iscProcessingLotResource.json"
+              examples:
+                Processing Lot Response Example:
+                  description: "A Processing Lot object"
+                  $ref: '#/components/examples/Processing Lot Response Example'  
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem Details'
+              examples:
+                Problem Details Fail Example:
+                  description: "A Problem Details object with the error code and message"
+                  $ref: "#/components/examples/Problem Details Fail Example" 
+
+  /host/processinglot-carcases/{lotId}:
+    put:
+      description: "Adds or updates the Carcases in the requested Processing Lot"
+      operationId: putProcessingLotCarcase
+      tags: ["Processing Lot - Carcases"]
+      parameters:
+        - name: lotId
+          in: path
+          description: Primary identifier for the requested "Processing Lot"
+          required: true
+          schema:
+            type: integer
+            format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: "An array of Carcases that is being added or updated against the Processing Lot"
+              type: array
+              items:
+                $ref: "https://github.com/Integrity-Systems-Company/common_carcase_schema/blob/main/resources/iscCarcaseResource.json"
+            examples:
+              Carcase Post Example:
+                  description: "An array of Carcase objects"
+                  $ref: '#/components/examples/Carcase Post Example'
+      responses:
+        '200':
+          description: "An object that shows if any problems occurred adding or updating the Carcases for the Processing Lot"
+          content:
+            application/json:
+              schema:
+                description: "A Problem Details object"
+                $ref: "#/components/schemas/Problem Details"
+              examples:
+                Problem Details Pass Carcase Example:
+                  description: "A Problem Details object with no errors and an array of Carcase objects"
+                  $ref: "#/components/examples/Problem Details Pass Carcase Example"
+                Problem Details Fail Example:
+                  description: "A Problem Details object with the error code and message"
+                  $ref: "#/components/examples/Problem Details Fail Example"                  
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem Details'
+              examples:
+                Problem Details Fail Example:
+                  description: "A Problem Details object with the error code and message"
+                  $ref: "#/components/examples/Problem Details Fail Example" 
+
+    get:
+      description: "Returns details of the Lot's Carcases for reconciliation"
+      operationId: getProcessingLotCarcase
+      tags: ["Processing Lot - Carcases"]
+      parameters:
+        - name: id
+          in: path
+          description: Primary identifier for the requested Processing Lot
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: "The array of Carcases that belong to the requested Processing Lot"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "https://github.com/Integrity-Systems-Company/common_carcase_schema/blob/main/resources/iscCarcaseResource.json"
+              examples:
+                Carcase Response Example:
+                  description: "An array of Carcase objects"
+                  $ref: '#/components/examples/Carcase Response Example'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem Details'
+              examples:
+                Problem Details Fail Example:
+                  description: "A Problem Details object with the error code and message"
+                  $ref: "#/components/examples/Problem Details Fail Example" 
+  
+  /host/processinglot-observationset/{lotId}:
+    put:
+      description: "Adds or updates Observation Sets for the requested Processing Lot"
+      operationId: putProcessingLotObservationSets
+      tags: ["Processing Lot - Observation Set"]
+      parameters:
+        - name: lotId
+          in: path
+          description: "Primary identifier for the requested Processing Lot"
+          required: true
+          schema:
+            type: integer
+            format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: "An array of Observation Sets that are being added or updated for the Processing Lot"
+              type: array
+              items:
+                $ref: "https://github.com/Integrity-Systems-Company/common_carcase_schema/blob/main/resources/iscObservationSetResource.json"            
+            examples:
+              Observation Set Post Example:
+                descrtion: "An array of Observation Set objects"
+                $ref: '#/components/examples/Observation Set Post Example'
+      responses:
+        '200':
+          description: "An object that shows if any problems occurred adding or updating the Observation Sets for the Processing Lot"
+          content:
+            application/json:
+              schema:
+                description: "A Problem Details object"
+                $ref: "#/components/schemas/Problem Details"
+              examples:
+                Problem Details Pass Observation Set Example:
+                  description: "A Problem Details object with no errors and an array of Observation Sets"
+                  $ref: "#/components/examples/Problem Details Pass Observation Set Example"
+                Problem Details Fail Example:
+                  description: "A Problem Details object with the error code and message"
+                  $ref: "#/components/examples/Problem Details Fail Example"                  
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem Details'
+              examples:
+                Problem Details Fail Example:
+                  description: "A Problem Details object with the error code and message"
+                  $ref: "#/components/examples/Problem Details Fail Example" 
+
+    get:
+      description: "Returns an array of Observation Sets for the requested Processing Lot"
+      operationId: getProcessingLotObservationSets
+      tags: ["Processing Lot - Observation Set"]
+      parameters:
+        - name: lotId
+          in: path
+          description: "Primary identifier for the requested Processing Lot"
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: carcaseId
+          in: query
+          description: "Primary identifier for a particular Carcase"
+          required: false
+          schema:
+            type: integer
+            format: int32
+        - name: observationDateTime
+          in: query
+          description: "Date and time that the Observation Set was recorded"
+          required: false
+          schema:
+            type: string
+            format: date
+        - name: standard
+          in: query
+          description: "The standard applying to the observation(s). "
+          required: false
+          schema:
+            type: string
+        - name: metric
+          in: query
+          description: "The metric measured in the observation(s)."
+          required: false
+          schema:
+            type: string            
+      responses:
+        '200':
+          description: "The array of Observation Sets that belong to the requested Procesing Lot and based on the optional query parameters"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "https://github.com/Integrity-Systems-Company/common_carcase_schema/blob/main/resources/iscObservationSetResource.json"
+              examples:
+                Observation Set Response Example:
+                  description: "An array of Observation Set objects"
+                  $ref: '#/components/examples/Observation Set Response Example'
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem Details'
+              examples:
+                Problem Details Fail Example:
+                  description: "A Problem Details object with the error code and message"
+                  $ref: "#/components/examples/Problem Details Fail Example" 
+    
+  /host/processinglot-msa-complete/{lotId}:    
+    post:
+      description: "Post to request whether the observation sets for the lot or carcase are 
+      complete to allow MSA calculation to proceed."
+      operationId: postMsaResults
+      tags: ["Processing Lot - MSA Results"]
+      parameters:
+        - name: lotId
+          in: path
+          description: "Primary identifier for the requested Processing Lot"
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: carcaseId
+          in: query
+          description: "Primary identifier for a particular Carcase"
+          required: false
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: "An object that shows if any problems occurred adding or updating the Observation Sets for the Processing Lot"
+          content:
+            application/json:
+              schema:
+                description: A Problem Details object
+                $ref: "#/components/schemas/Problem Details"
+              examples:
+                Problem Details Pass MSA Observation Set Example:
+                  description: "A Problem Details object with no errors and an array of Observation Sets"
+                  $ref: "#/components/examples/Problem Details Pass MSA Observation Set Example"
+                Problem Details Fail Example:
+                  description: "A Problem Details object with the error code and message"
+                  $ref: "#/components/examples/Problem Details Fail Example"                
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Problem Details'
+              examples:
+                Problem Details Fail Example:
+                  description: "A Problem Details object with the error code and message"
+                  $ref: "#/components/examples/Problem Details Fail Example" 
+
+
+
+
+components:
+# TODO: update this object to implement the Problem Details Model
+  schemas:
+    Problem Details:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        request:
+          type: object
+  examples:
+    Problem Details Pass Example:
+      value:
+      - code: 200
+        message: ""
+        request:
+    Problem Details Pass Animal Example:
+      value:
+      - code: 200
+        message: ""
+        request: 
+          animals:
+            - animalIdentifiers: ["EID, 982 000145027095", "NLIS, 3HGET065XBCD0071"]
+              gender: "Male"
+              idLocation: "LE"
+              breedMix: "AA"
+              breedLevelQualifier: "A0"
+              status: "Dead on Arrival"
+              deviceStatus: "K1F"
+            - animalIdentifiers: ["EID, 982 000145017814"]
+              gender: "Male"
+              idLocation: "LE"
+              breedMix: "AA"
+              breedLevelQualifier: "S1"
+              status: "Death at Lairage"
+              deviceStatus: "AV2"
+    Problem Details Pass Carcase Example:
+      value:
+      - code: 200
+        message: ""
+        request:
+          carcases:
+            - animalIdentifier: ["EID, 982 000445566778"]
+              bodyNo: 84
+              plantBoningRun: "9999-2"
+              plantBoningRunTemplate: "YZQ123"
+              destCode: "ABC12"
+              refProcessorGrid: "011-21"
+            - animalIdentifier: ["EID, 982 000776655448"]
+              bodyNo: 85
+              plantBoningRun: "9999-2"
+              plantBoningRunTemplate: "YZQ123"
+              destCode: "ABC12"
+              refProcessorGrid: "011-21"
+    Problem Details Pass Observation Set Example:
+      value:
+      - code: 200
+        message: ""
+        request:
+          observationSets:
+            - lotid: "123e4567-e89b-12d3-a456-426614174534"
+              killDate: "16/03/2021  11:10am"
+              observationDateTime: "16/03/2021 2:14pm"
+              observationLocation: 3
+              carcase: 84
+              observer: "ABCD01"
+              sideID: "R"
+              carcaseState: "H"
+              standard: "AUS-MEAT"
+              metric: "hotCarcaseWt"
+              method: "Scales"
+              value: "241.2"
+              units: "kg"
+              observationStatus: "Measured"
+            - lotid: "123e4567-e89b-12d3-a456-426614174534"
+              killDate: "16/03/2021  11:10am"
+              observationDateTime: "16/03/2021 2:14pm"
+              observationLocation: 3
+              carcase: 84
+              observer: "ABCD01"
+              sideID: "R"
+              carcaseState: "H"
+              standard: "AUS-MEAT"
+              metric: "marbling"
+              method: "Visual"
+              value: "3.1"
+              units: ""
+              observationStatus: "Calculated"
+            - lotid: "123e4567-e89b-12d3-a456-426614174534"
+              killDate: "16/03/2021  11:10am"
+              observationDateTime: "16/03/2021 2:14pm"
+              observationLocation: 3
+              carcase: 85
+              observer: "ABCD01"
+              sideID: "R"
+              carcaseState: "H"
+              standard: "AUS-MEAT"
+              metric: "hotCarcaseWt"
+              method: "Weigh"
+              value: "288.0"
+              units: "kg"
+              observationStatus: "Measured"            
+            - lotid: "123e4567-e89b-12d3-a456-426614174534"
+              killDate: "16/03/2021  11:10am"
+              observationDateTime: "16/03/2021 3:18pm"
+              observationLocation: 3
+              carcase: 93
+              observer: "BAX02"
+              sideID: "R"
+              carcaseState: "H"
+              standard: "Disease"
+              metric: "Liver Fluke"
+              method: "Visual"
+              value: "Y"
+              units: ""
+              observationStatus: ""
+            - lotid: "123e4567-e89b-12d3-a456-426614174534"
+              killDate: "16/03/2021  11:10am"
+              observationDateTime: "17/03/2021 1:23pm"
+              observationLocation: 8
+              carcase: 84
+              observer: "XYCD01"
+              sideID: "R"
+              carcaseState: "C"
+              standard: "MSA"
+              metric: "Eye Muscle Area"
+              method: "Grid"
+              value: "77"
+              units: "sq cm"
+              observationStatus: "Measured"
+            - lotid: "123e4567-e89b-12d3-a456-426614174534"
+              killDate: "16/03/2021  11:10am"
+              observationDateTime: "17/03/2021 1:23pm"
+              observationLocation: 8
+              carcase: 84
+              observer: "XYCD01"
+              sideID: "R"
+              carcaseState: "C"
+              standard: "MSA Chiller v3.1"
+              metric: "marbling"
+              method: "Visual"
+              value: "320"
+              units: ""
+              observationStatus: "Measured"
+            - lotid: "123e4567-e89b-12d3-a456-426614174534"
+              killDate: "16/03/2021  11:10am"
+              observationDateTime: "17/03/2021 1:25pm"
+              observationLocation: 8
+              carcase: 85
+              observer: "XYCD01"
+              sideID: "R"
+              carcaseState: "C"
+              standard: "MSA Chiller v3.1"
+              metric: "loinTemp"
+              method: "Thermometer"
+              value: "7.1"
+              units: "Degrees C"
+              observationStatus: "Measured"                    
+    Problem Details Pass MSA Observation Set Example:
+      value:
+      - code: 200
+        message: ""
+        request:
+          observationSets:
+            - lotid: "123e4567-e89b-12d3-a456-426614174534"
+              observationDateTime: "17/03/2021 1:23pm"
+              carcase: 84
+              sideID: "R"
+              standard: MSA"
+              metric: "index"
+              method: "MSAIndex"
+              value: "55.42"
+              units: ""
+              observationStatus: "Calculated"
+            - lotid: "123e4567-e89b-12d3-a456-426614174534"
+              observationDateTime: "17/03/2021 1:25pm"
+              carcase: 87
+              sideID: "R"
+              standard: "MSA"
+              metric: "index"
+              method: "MSAIndex"
+              value: "N/A"
+              units: ""
+              observationStatus: "Calculated"
+    Problem Details Fail Example:
+      value:
+      - code: 500
+        message: "500 Internal Server Error"
+        request:        
+    
+    Consigment Post Example:
+      value:
+        id: 
+        eNVDref: "CO125"
+        Source: "ND250250"
+        Destination: "NS121093"
+        dateShipped: "15/03/2021"
+        dateReceived: "16/03/2021"
+        quantityConsigned: 83
+        quantityReceived: 83
+        arrivalTime: "16/03/2021 07:43am"
+        hgpfree: "Y"
+        feedType: "Grass"
+        hoursOffWater: 10
+        interestedParties:
+          - interests: "Producer" 
+            pic: "ND250250"
+            leiCode: "74 412 829 978"
+            legalName: "Berra Farm"
+            registrations: ["NLIS, 123456", "LPA, 875432"]
+            picExtendedResidueStatus:
+          - interests: "Retailer" 
+            pic: ""
+            leiCode: "44 201 372 937"
+            legalName: "Bob’s Farm Butchery"
+            registrations: []
+            picExtendedResidueStatus: 
+          - interests: "Saleyard" 
+            pic: "NA477352"
+            leiCode: "89 645 123 456"
+            legalName: "XYZ Saleyard No 1 Pty Ltd"
+            registrations: []
+            picExtendedResidueStatus:                          
+    Consigment Response Example:
+      value:
+        id: "123e4567-e89b-12d3-a456-426614174000"
+        eNVDref: "CO125"
+        Source: "ND250250"
+        Destination: "NS121093"
+        dateShipped: "15/03/2021"
+        dateReceived: "16/03/2021"
+        quantityConsigned: 83
+        quantityReceived: 83
+        arrivalTime: "16/03/2021 07:43am"
+        hgpfree: "Y"
+        feedType: "Grass"
+        hoursOffWater: 10        
+        interestedParties:
+          - interests: "Producer" 
+            pic: "ND250250"
+            leiCode: "74 412 829 978"
+            legalName: "Berra Farm"
+            registrations: ["NLIS, 123456", "LPA, 875432"]
+            picExtendedResidueStatus:
+          - interests: "Retailer" 
+            pic: ""
+            leiCode: "44 201 372 937"
+            legalName: "Bob’s Farm Butchery"
+            registrations: []
+            picExtendedResidueStatus: 
+          - interests: "Saleyard" 
+            pic: "NA477352"
+            leiCode: "89 645 123 456"
+            legalName: "XYZ Saleyard No 1 Pty Ltd"
+            registrations: []
+            picExtendedResidueStatus:
+    
+    Animal Post Example:
+      value:
+        animals:
+          - animalIdentifiers: ["EID, 982 000145027095", "NLIS, 3HGET065XBCD0071"]
+            gender: "Male"
+            idLocation: "LE"
+            breedMix: "AA"
+            breedLevelQualifier: "A0"
+            status: ""
+            deviceStatus:
+          - animalIdentifiers: ["EID, 982 000145017814"]
+            gender: "Male"
+            idLocation: "LE"
+            breedMix: "AA"
+            breedLevelQualifier: "S1"
+            status: ""
+            deviceStatus: 
+    Animal Response Example:
+      value:
+        animals:
+          - animalIdentifiers: ["EID, 982 000145027095", "NLIS, 3HGET065XBCD0071"]
+            gender: "Male"
+            idLocation: "LE"
+            breedMix: "AA"
+            breedLevelQualifier: "A0"
+            status: "Dead on Arrival"
+            deviceStatus: "K1F"
+          - animalIdentifiers: ["EID, 982 000145017814"]
+            gender: "Male"
+            idLocation: "LE"
+            breedMix: "AA"
+            breedLevelQualifier: "S1"
+            status: "Death at Lairage"
+            deviceStatus: "AV2"
+
+    Processing Lot Post Example:
+      value:
+        id: 
+        killDate: "16/03/2021 11:10am"
+        killLocation: 3
+        lot: 6
+        startBodyNumber: 84
+        endBodyNumber: 190
+        lotConsignment: "123e4567-e89b-12d3-a456-426614174000"
+        lotCount: 107
+        species: "Cattle"
+    Processing Lot Response Example:
+      value:
+        id: "123e4567-e89b-12d3-a456-426614174534"
+        killDate: "16/03/2021 11:10am"
+        killLocation: 3
+        lot: 6
+        startBodyNumber: 84
+        endBodyNumber: 190
+        lotConsignment: "123e4567-e89b-12d3-a456-426614174000"
+        lotCount: 107
+        species: "Cattle"
+
+    Carcase Post Example:
+      value:
+        carcases:
+          - animalIdentifier: ["EID, 982 000445566778"]
+            bodyNo: 84
+            plantBoningRun: "9999-2"
+            plantBoningRunTemplate: "YZQ123"
+            destCode: "ABC12"
+            refProcessorGrid: "011-21"
+          - animalIdentifier: ["EID, 982 000776655448"]
+            bodyNo: 85
+            plantBoningRun: "9999-2"
+            plantBoningRunTemplate: "YZQ123"
+            destCode: "ABC12"
+            refProcessorGrid: "011-21"
+    Carcase Response Example:
+      value:
+        carcases:
+          - animalIdentifier: ["EID, 982 000445566778"]
+            bodyNo: 84
+            plantBoningRun: "9999-2"
+            plantBoningRunTemplate: "YZQ123"
+            destCode: "ABC12"
+            refProcessorGrid: "011-21"
+          - animalIdentifier: ["EID, 982 000776655448"]
+            bodyNo: 85
+            plantBoningRun: "9999-2"
+            plantBoningRunTemplate: "YZQ123"
+            destCode: "ABC12"
+            refProcessorGrid: "011-21"
+
+    Observation Set Post Example:
+      value:
+        observationSets:
+          - lotid: "123e4567-e89b-12d3-a456-426614174534"
+            killDate: "16/03/2021  11:10am"
+            observationDateTime: "16/03/2021 2:14pm"
+            observationLocation: 3
+            carcase: 84
+            observer: "ABCD01"
+            sideID: "R"
+            carcaseState: "H"
+            standard: "AUS-MEAT"
+            metric: "hotCarcaseWt"
+            method: "Scales"
+            value: "241.2"
+            units: "kg"
+            observationStatus: "Measured"
+          - lotid: "123e4567-e89b-12d3-a456-426614174534"
+            killDate: "16/03/2021  11:10am"
+            observationDateTime: "16/03/2021 2:14pm"
+            observationLocation: 3
+            carcase: 84
+            observer: "ABCD01"
+            sideID: "R"
+            carcaseState: "H"
+            standard: "AUS-MEAT"
+            metric: "marbling"
+            method: "Visual"
+            value: "3.1"
+            units: ""
+            observationStatus: "Calculated"
+          - lotid: "123e4567-e89b-12d3-a456-426614174534"
+            killDate: "16/03/2021  11:10am"
+            observationDateTime: "16/03/2021 2:14pm"
+            observationLocation: 3
+            carcase: 85
+            observer: "ABCD01"
+            sideID: "R"
+            carcaseState: "H"
+            standard: "AUS-MEAT"
+            metric: "hotCarcaseWt"
+            method: "Weigh"
+            value: "288.0"
+            units: "kg"
+            observationStatus: "Measured"            
+          - lotid: "123e4567-e89b-12d3-a456-426614174534"
+            killDate: "16/03/2021  11:10am"
+            observationDateTime: "16/03/2021 3:18pm"
+            observationLocation: 3
+            carcase: 93
+            observer: "BAX02"
+            sideID: "R"
+            carcaseState: "H"
+            standard: "Disease"
+            metric: "Liver Fluke"
+            method: "Visual"
+            value: "Y"
+            units: ""
+            observationStatus: ""
+          - lotid: "123e4567-e89b-12d3-a456-426614174534"
+            killDate: "16/03/2021  11:10am"
+            observationDateTime: "17/03/2021 1:23pm"
+            observationLocation: 8
+            carcase: 84
+            observer: "XYCD01"
+            sideID: "R"
+            carcaseState: "C"
+            standard: "MSA"
+            metric: "Eye Muscle Area"
+            method: "Grid"
+            value: "77"
+            units: "sq cm"
+            observationStatus: "Measured"
+          - lotid: "123e4567-e89b-12d3-a456-426614174534"
+            killDate: "16/03/2021  11:10am"
+            observationDateTime: "17/03/2021 1:23pm"
+            observationLocation: 8
+            carcase: 84
+            observer: "XYCD01"
+            sideID: "R"
+            carcaseState: "C"
+            standard: "MSA Chiller v3.1"
+            metric: "marbling"
+            method: "Visual"
+            value: "320"
+            units: ""
+            observationStatus: "Measured"
+          - lotid: "123e4567-e89b-12d3-a456-426614174534"
+            killDate: "16/03/2021  11:10am"
+            observationDateTime: "17/03/2021 1:25pm"
+            observationLocation: 8
+            carcase: 85
+            observer: "XYCD01"
+            sideID: "R"
+            carcaseState: "C"
+            standard: "MSA Chiller v3.1"
+            metric: "loinTemp"
+            method: "Thermometer"
+            value: "7.1"
+            units: "Degrees C"
+            observationStatus: "Measured"                                      
+    Observation Set Response Example:
+      value:
+        observationSets:
+          - lotid: "123e4567-e89b-12d3-a456-426614174534"
+            killDate: "16/03/2021  11:10am"
+            observationDateTime: "16/03/2021 2:14pm"
+            observationLocation: 3
+            carcase: 84
+            observer: "ABCD01"
+            sideID: "R"
+            carcaseState: "H"
+            standard: "AUS-MEAT"
+            metric: "hotCarcaseWt"
+            method: "Scales"
+            value: "241.2"
+            units: "kg"
+            observationStatus: "Measured"
+          - lotid: "123e4567-e89b-12d3-a456-426614174534"
+            killDate: "16/03/2021  11:10am"
+            observationDateTime: "16/03/2021 2:14pm"
+            observationLocation: 3
+            carcase: 84
+            observer: "ABCD01"
+            sideID: "R"
+            carcaseState: "H"
+            standard: "AUS-MEAT"
+            metric: "marbling"
+            method: "Visual"
+            value: "3.1"
+            units: ""
+            observationStatus: "Calculated"
+          - lotid: "123e4567-e89b-12d3-a456-426614174534"
+            killDate: "16/03/2021  11:10am"
+            observationDateTime: "16/03/2021 2:14pm"
+            observationLocation: 3
+            carcase: 85
+            observer: "ABCD01"
+            sideID: "R"
+            carcaseState: "H"
+            standard: "AUS-MEAT"
+            metric: "hotCarcaseWt"
+            method: "Weigh"
+            value: "288.0"
+            units: "kg"
+            observationStatus: "Measured"            
+          - lotid: "123e4567-e89b-12d3-a456-426614174534"
+            killDate: "16/03/2021  11:10am"
+            observationDateTime: "16/03/2021 3:18pm"
+            observationLocation: 3
+            carcase: 93
+            observer: "BAX02"
+            sideID: "R"
+            carcaseState: "H"
+            standard: "Disease"
+            metric: "Liver Fluke"
+            method: "Visual"
+            value: "Y"
+            units: ""
+            observationStatus: ""
+          - lotid: "123e4567-e89b-12d3-a456-426614174534"
+            killDate: "16/03/2021  11:10am"
+            observationDateTime: "17/03/2021 1:23pm"
+            observationLocation: 8
+            carcase: 84
+            observer: "XYCD01"
+            sideID: "R"
+            carcaseState: "C"
+            standard: "MSA"
+            metric: "Eye Muscle Area"
+            method: "Grid"
+            value: "77"
+            units: "sq cm"
+            observationStatus: "Measured"
+          - lotid: "123e4567-e89b-12d3-a456-426614174534"
+            killDate: "16/03/2021  11:10am"
+            observationDateTime: "17/03/2021 1:23pm"
+            observationLocation: 8
+            carcase: 84
+            observer: "XYCD01"
+            sideID: "R"
+            carcaseState: "C"
+            standard: "MSA Chiller v3.1"
+            metric: "marbling"
+            method: "Visual"
+            value: "320"
+            units: ""
+            observationStatus: "Measured"
+          - lotid: "123e4567-e89b-12d3-a456-426614174534"
+            killDate: "16/03/2021  11:10am"
+            observationDateTime: "17/03/2021 1:25pm"
+            observationLocation: 8
+            carcase: 85
+            observer: "XYCD01"
+            sideID: "R"
+            carcaseState: "C"
+            standard: "MSA Chiller v3.1"
+            metric: "loinTemp"
+            method: "Thermometer"
+            value: "7.1"
+            units: "Degrees C"
+            observationStatus: "Measured"   
